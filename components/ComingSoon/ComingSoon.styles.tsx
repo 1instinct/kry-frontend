@@ -84,13 +84,14 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: auto;
-  height: 240px;
+  filter: ${(p) =>
+    p.theme.isDarkMode
+      ? `invert(1) brightness(0.8)`
+      : `invert(0) brightness(1)`};
 
-  @media screen and (max-width: ${(p) => p.theme.breakpoints.values.sm}px) {
-    width: 90%;
-    height: auto;
-  }
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
 `;
 
 export const LogoText = styled.div`
